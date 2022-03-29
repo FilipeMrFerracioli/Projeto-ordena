@@ -16,8 +16,8 @@ public:
     Fila(int tamanho);
     ~Fila();
 
-    bool estaVazia() const { return quantidadeElementos == 0; }
-    bool estaCheia() const { return quantidadeElementos == tamanho; }
+    bool estaVazia() const { return (quantidadeElementos == 0); }
+    bool estaCheia() const { return (quantidadeElementos == tamanho); }
     int getQuantidadeElementos() const { return quantidadeElementos; }
 
     void inserir(int elemento);

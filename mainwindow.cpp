@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    if(ordena) delete ordena;
     delete ui;
 }
 
@@ -20,9 +21,10 @@ void MainWindow::on_pushButtonGerar_clicked()
         ordena = new minhaNamespace::Ordena(ui->lineEditTamanhoVetor->text().toInt());
 
         ordena->gerarValoresEInserir();
+        ordena->ordenarVetor();
 
         ui->lineEditVetorAleatorio->setText(ordena->getVetorAleatorio());
-        //ui->lineEditVetorOrdenado->setText(ordena->getVetorOrdenado());
+        ui->lineEditVetorOrdenado->setText(ordena->getVetorOrdenado());
     }  catch (QString &erro) {
         QMessageBox::information(this, "Erro", erro);
     }

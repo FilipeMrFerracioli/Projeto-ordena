@@ -14,7 +14,7 @@ Fila::Fila(int tamanho):
     try {
         vetor = new int[tamanho];
         this->tamanho = tamanho;
-    }  catch (std::bad_alloc) {
+    }  catch (std::bad_alloc const&) {
         throw QString("Erro na alocação de memória!");
     }
 }
